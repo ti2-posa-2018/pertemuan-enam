@@ -1,0 +1,55 @@
+# Atribut File dan Izin Akses File
+-----
+
+![](img/permissions.png)
+
+## Theory First
+
+### 1. Atribut File
+
+Setiap file memiliki atribut yang berisi keterangan tentang file tersebut.
+
+Cek artibut file: `ls -l`
+
+![](img/20181128-190506.png)
+
+### 2. Izin Akses File
+
+Izin akses untuk file terdiri dari 9 karakter yang dikelompokkan menjadi 3.
+
+3 karakter pertama untuk user pemilik file, 3 karakter kedua untuk group pemilik file, 3 karakter ketiga untuk other (di luar user dan group pemilik file).
+
+![](img/20181128-190924.png)
+
+>R: READ: Membaca File / Direktori
+>W: WRITE: Mengubah File / Direktori
+>X: EXECTURE: Mengeksekusi File / Masuk Direktori
+
+### 3. Mengubah Izin Akses
+
+Mengubah izin akses suatu file menggunakan perintah `chmod`
+
+`chmod` memiliki 2 cara untuk mengubah file:
+
+1. Format Huruf
+sintaks: `chmod [ugoa] [+-=] [rwx] nama-file`
+
+2. Format Angka
+sintaks: `chmod [kode user] [kode group] [kode other] nama-file`
+![](img/20181128-194822.png)
+
+### 4. Mengubah User Pemilik File
+
+Mengubah user pemilik file menggunakan perintah: `chown`
+
+sintaks: `chown [user-baru] nama-file`
+
+### 5. Mengubah Group Pemilik File
+
+Mengubah user pemilik file menggunakan perintah: `chgrp`
+
+sintaks: `chgrp [user-baru] [user-lama] nama-file`
+
+## Lanjut?
+
+**Mari Praktikum Sebenarnya.**
