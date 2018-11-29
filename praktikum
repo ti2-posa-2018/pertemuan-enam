@@ -1,0 +1,70 @@
+# Atribut File dan Izin Akses File
+
+------
+
+![](img/permissions.png)
+
+## Praktikum.
+
+### 1. Mengubah Izin Akses
+
+**Menggunakan Huruf**
+
+1. Membuat file: `touch latihan`
+2. Cek informasi file: `ls -l latihan`
+3. Menambahkan akses **x (execute)** untuk **u (user)**: `chmod u+x latihan`
+4. Mengurangi akses **w (write)** untuk **g (group)**: `chmod g-w latihan`
+5. Menambahkan akses **x (execute)** untuk **g (group) dan o (other)**:
+`chmod g+x, o+x latihan` atau `chmod go+x latihan`
+6. Hanya memberikan akses **read dan write** untuk **u (user), g (group), dan o (other)**: `chmod ugo=rw latihan`
+
+**Menggunakan Angka**
+
+1. Memberi akses 644: `chmod 644 latihan`
+2. Memberi akses 64: `chmod 64 latihan`
+3. Memberi akses 6: `chmod 6 latihan`
+
+### 2. Mengubah User dan Group Pemilik File
+
+1. Menambah user badu: `sudo useradd -m badu`
+2. Membuat file: `touch latihan`
+3. Mengubah user pemilik file menjadi badu: `sudo chown badu latihan`
+4. Mengubah group pemilik file menjadi badu: `sudo chgrp badu latihan`
+
+### 3. Pengaruh Izin Akses pada File.
+
+**Pengaruh R (Read) pada File**
+
+File dapat dibaca jika memiliki akses **R (Read)** namun tidak dapat dibaca jika tidak memiliki akses **R (Read)**.
+
+1. Buat file belajar: `touch belajar`
+2. Isi tulisan di file belajar
+3. Baca file belajar: `cat belajar`
+4. Hilangkan akses **R (Read)**: `chmod u-r belajar`
+5. Baca kembali file belajar: `cat belajar`
+6. Tambahkan kembali akses **R (Read)**: `chmod u+r belajar`
+7. Baca kembali file belajar: `cat belajar`
+
+**Pengaruh W (Write) pada File**
+
+File dapat ditulis / diedit jika memiliki akses **W (Write)** namun tidak dapat diedit jika tidak memiliki akses **W (Write)**.
+
+1. Buat file latihan: `touch latihan`
+1. Tambahkan kalimat `File masih bisa diedit`.
+2. Hilangkan akses **W (Write)**: `chmod u-w latihan`
+3. Edit file latihan
+4. Tambahkan kembali akses **W (Write)**: `chmod u+w latihan`
+5. Edit kembali file latihan
+
+**Pengaruh X (Execute) pada File**
+
+File dapat dieksekusi / dijalankan jika memiliki akses **X (Execute)** namun tidak dapat dieksekusi jika tidak memiliki akses **X (Execute)**.
+
+1. Buat file cekuser: `touch user`
+2. Tambahkan kata `who` di file cekuser
+3. Lihat informasi file cekuser: `ls -l cekuser`
+4. Eksekusi file cekuser: `./cekuser`
+5. Tambahkan akses **X (Excute)**: `chmod u+x cekuser`
+6. Jalankan kembali file cekuser: `./cekuser`
+
+### Selesai. :D
